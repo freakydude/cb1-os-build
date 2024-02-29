@@ -4,8 +4,11 @@ env:
   tagName: prerelease-latest
   releaseName: prerelease-latest
   preRelease: true
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 jobs:
-  log-the-inputs:
+  build-os-image-and-debs:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - name: Install dependencies
@@ -15,7 +18,7 @@ jobs:
       - name: Checkout bigtreetech/CB1-Kernel
         run: |
           git clone 'https://github.com/bigtreetech/CB1-Kernel.git'
-      - name: Build OS image
+      - name: Build CB1 Images and Debs
         run: |
           cd CB1-Kernel
           echo 'BUILD_OPT="image"' >> userpatches/config-build.conf
@@ -23,10 +26,12 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: CB1 Images
-          path: ${{ github.workspace }}/CB1-Kernel/output/images/**/*
+          name: CB1 Images and Debs
+          path: |
+            ${{ github.workspace }}/CB1-Kernel/output/images/**/*
+            ${{ github.workspace }}/CB1-Kernel/output/debs/**/*
           overwrite: true
-      - name: Release artifacts
+      - name: Release CB1 Images and Debs
         uses: softprops/action-gh-release@v1
         with:
           name: ${{ env.releaseName }}
@@ -34,3 +39,4 @@ jobs:
           prerelease: ${{ env.preRelease }}
           files: |
             ${{ github.workspace }}/CB1-Kernel/output/images/**/*
+            ${{ github.workspace }}/CB1-Kernel/output/debs/**/*
