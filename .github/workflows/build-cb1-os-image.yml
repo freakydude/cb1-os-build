@@ -16,3 +16,14 @@ jobs:
           cd CB1-Kernel
           echo 'BUILD_OPT="image"' >> userpatches/config-build.conf
           sudo ./build.sh
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: CB1 Images
+          path: ~/CB1-Kernel/output/images/**/*
+          overwrite: true
+      - name: Release artifacts
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            ~/CB1-Kernel/output/images/**/*
