@@ -12,6 +12,7 @@ jobs:
         run: |
           git clone 'https://github.com/bigtreetech/CB1-Kernel.git'
       - name: Build OS image
-        run: |
+        run: |          
           cd CB1-Kernel
+          echo 'BUILD_OPT="image"' >> userpatches/config-build.conf
           sudo ./build.sh
