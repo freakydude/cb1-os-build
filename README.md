@@ -32,7 +32,7 @@ Please note that the use of this open-source code is at your own discretion. The
 ## Reference
 
 - [Latest official build CB1 Debian Image](https://github.com/bigtreetech/CB1)
-- [Official sourcecode of this build](https://github.com/bigtreetech/https://github.com/bigtreetech/CB1-Kernel)
+- [Official sourcecode of this build](https://github.com/bigtreetech/CB1-Kernel)
 - [BIQU TFT35 SPI](https://github.com/bigtreetech/TFT35-SPI/)
 - [Allwinner usb boot](https://linux-sunxi.org/FEL/USBBoot)
 - [Allwinner Online Development Forum](https://bbs.aw-ol.com/topic/2054/mq-quad-h616-%E4%B8%BB%E7%BA%BF%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91%E8%B0%83%E8%AF%95%E8%AE%B0%E5%BD%95-u-boot-kernel-buildroot/17)
