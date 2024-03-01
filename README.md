@@ -15,12 +15,9 @@ There is an issue with ghost touching on the BigTreeTech TFT35 SPI. It is fixed 
 
 You can connect and login with SSH to your running CB1
 
-- Get latest dtb files: `wget https://github.com/freakydude/cb1-os-build/releases/download/prerelease-latest/linux-dtb-current-s
-un50iw9_2.3.3_arm64.deb`
-- Get latest linux kernel build: `wget https://github.com/freakydude/cb1-os-build/releases/download/prerelease-latest/linux-image-current
--sun50iw9_2.3.3_arm64.deb`
-- Install both packages with apt: `sudo apt install ./linux-dtb-current-sun50iw9_2.3.3_arm64.deb ./linux-image-current-sun50iw9_2.3.3_arm6
-4.deb`
+- Get latest dtb files: `wget https://github.com/freakydude/cb1-os-build/releases/download/prerelease-latest/linux-dtb-current-sun50iw9_2.3.3_arm64.deb`
+- Get latest linux kernel build: `wget https://github.com/freakydude/cb1-os-build/releases/download/prerelease-latest/linux-image-current-sun50iw9_2.3.3_arm64.deb`
+- Install both packages with apt: `sudo apt install ./linux-dtb-current-sun50iw9_2.3.3_arm64.deb ./linux-image-current-sun50iw9_2.3.3_arm64.deb`
 - Reboot: `sudo systemctl reboot`
 
 **Thanks @Duckferd to provide the basic idea.**
